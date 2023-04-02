@@ -2,9 +2,9 @@
 
 namespace Designbycode\Datatables\Tests;
 
+use Designbycode\Datatables\DatatablesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Designbycode\Datatables\DatatablesServiceProvider;
 
 class TestCase extends Orchestra
 {

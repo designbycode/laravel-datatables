@@ -2,9 +2,9 @@
 
 namespace Designbycode\Datatables;
 
+use Designbycode\Datatables\Commands\DatatablesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Designbycode\Datatables\Commands\DatatablesCommand;
 
 class DatatablesServiceProvider extends PackageServiceProvider
 {
