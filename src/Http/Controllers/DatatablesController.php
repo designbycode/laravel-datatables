@@ -12,7 +12,7 @@ abstract class DatatablesController extends Controller
 
     public function index(Request $request): array
     {
-        return $this->getData($request);
+        return $this->getResponse($request);
     }
 
     public function show(string $id)

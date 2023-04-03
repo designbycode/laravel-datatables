@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Builder;
 
 class PostController extends DatatablesController
 {
-    protected function builder(): Builder
+    public function builder(): Builder
     {
         return Post::query();
+    }
+
+    public function getFormInputTypes(): array
+    {
+        return [];
     }
 }
