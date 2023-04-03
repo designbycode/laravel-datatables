@@ -1,12 +1,12 @@
 <?php
 
-namespace Designbycode\Datatables\Commands;
+namespace Designbycode\Datatables\Console\Commands;
 
 use Illuminate\Console\Command;
 
 class DatatablesCommand extends Command
 {
-    public $signature = 'laravel-datatables';
+    public $signature = 'datatables';
 
     public $description = 'My command';
 

@@ -5,12 +5,12 @@ namespace Designbycode\Datatables\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Designbycode\Datatables\Datatables
+ * @see \Designbycode\Datatables\Http\Controllers\DatatablesController
  */
 class Datatables extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Designbycode\Datatables\Datatables::class;
+        return \Designbycode\Datatables\Http\Controllers\DatatablesController::class;
     }
 }

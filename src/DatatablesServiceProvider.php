@@ -2,7 +2,7 @@
 
 namespace Designbycode\Datatables;
 
-use Designbycode\Datatables\Commands\DatatablesCommand;
+use Designbycode\Datatables\Console\Commands\DatatablesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -16,10 +16,10 @@ class DatatablesServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-datatables')
+            ->name('datatables')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-datatables_table')
+            ->hasMigration('create_datatables_table')
             ->hasCommand(DatatablesCommand::class);
     }
 }
