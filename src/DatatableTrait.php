@@ -1,6 +1,6 @@
 <?php
 
-namespace Designbycode\Datatables\Http\Traits;
+namespace Designbycode\Datatables;
 
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
@@ -52,20 +52,19 @@ trait DatatableTrait
     {
         return [
             'data' => [
-                'name' => $this->getDataTableName(),
-                'name_singular' => Str::singular($this->getDataTableName()),
-                'settings' => [
+                'meta' => [
+                    'name' => $this->getDataTableName(),
+                    'name_singular' => Str::singular($this->getDataTableName()),
                     'allow' => [
                         'deletions' => $this->allowDeletion,
                         'creation' => $this->allowCreation,
                         'searching' => $this->allowSearching,
+                        'create_with_dialog' => $this->createUsingDialog,
                     ],
-                    'create_with_dialog' => $this->createUsingDialog,
                     'pagination_limit' => $this->getLimit($request),
                 ],
                 'database' => [
                     'typings' => $this->getModelDatabaseTypings(),
-                    'input_types' => $this->getFormInputTypes(),
                 ],
                 'columns' => [
                     'updatable' => $this->getUpdatableColumns(),
@@ -125,11 +124,6 @@ trait DatatableTrait
     {
         return $this->builder->getModel()->getFillable();
     }
-
-    /**
-     * Create form input types
-     */
-    abstract public function getFormInputTypes(): array;
 
     /**
      * Only column field that can be updated

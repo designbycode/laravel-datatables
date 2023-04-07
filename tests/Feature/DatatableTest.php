@@ -2,8 +2,13 @@
 
 use Designbycode\Datatables\Tests\Stubs\Post;
 
+it('can create post model', function () {
+    $post = Post::create(['title' => 'first', 'content' => 'content']);
+    expect($post->title)->toEqual('first');
+});
+
 it('can visit posts route', function () {
-    $posts = $this->get(route('posts.index'))
+    $this->get(route('posts.index'))
         ->assertStatus(200);
 });
 

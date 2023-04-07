@@ -1,8 +1,7 @@
 <?php
 
-namespace Designbycode\Datatables\Http\Controllers;
+namespace Designbycode\Datatables;
 
-use Designbycode\Datatables\Http\Traits\DatatableTrait;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -10,7 +9,7 @@ abstract class DatatablesController extends Controller
 {
     use DatatableTrait;
 
-    public function index(Request $request): array
+    public function index(Request $request)
     {
         return $this->getResponse($request);
     }

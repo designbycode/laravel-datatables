@@ -66,11 +66,8 @@
         "laravel": {
             "providers": [
                 "Designbycode\\Datatables\\DatatablesServiceProvider"
-            ],
-            "aliases": {
-                "Datatables": "Designbycode\\Datatables\\Facades\\Datatables"
-            }
-        }
+            ]
+         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
