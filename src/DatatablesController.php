@@ -16,7 +16,7 @@ abstract class DatatablesController extends Controller
 
     public function show(string $id)
     {
-        // TODO: Implement show() method.
+
     }
 
     public function create()
@@ -24,23 +24,40 @@ abstract class DatatablesController extends Controller
         // TODO: Implement create() method.
     }
 
-    public function store()
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request): void
     {
-        // TODO: Implement store() method.
+        $request->validate(singleArrayToMultiArray($this->getCreatableColumns(), 'required'));
+
+        $this->builder->create($request->only($this->getCreatableColumns()));
     }
 
     public function edit(string $id)
     {
-        // TODO: Implement edit() method.
+
     }
 
-    public function update(string $id)
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
-        // TODO: Implement update() method.
+        $request->validate(singleArrayToMultiArray($this->getCreatableColumns(), 'required'));
+
+        $this->builder->update($request->only($this->getCreatableColumns()));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $ids)
     {
-        // TODO: Implement destroy() method.
+        if ($this->allowDeletion) {
+            $this->builder->whereIn('id', explode(',', $ids))->delete();
+
+            return redirect()->back()->with('success', 'Successfully deleted');
+        }
     }
 }
