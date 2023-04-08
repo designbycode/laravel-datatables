@@ -29,8 +29,6 @@ abstract class DatatablesController extends Controller
      */
     public function store(Request $request): void
     {
-        $request->validate(singleArrayToMultiArray($this->getCreatableColumns(), 'required'));
-
         $this->builder->create($request->only($this->getCreatableColumns()));
     }
 
@@ -44,9 +42,7 @@ abstract class DatatablesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate(singleArrayToMultiArray($this->getCreatableColumns(), 'required'));
-
-        $this->builder->update($request->only($this->getCreatableColumns()));
+        $this->builder->update($request->only($this->getUpdatableColumns()));
     }
 
     /**
