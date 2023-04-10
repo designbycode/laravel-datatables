@@ -9,5 +9,3 @@ it('cant transform array into array with key and empty value', function () {
         'email' => '',
     ]);
 });
-
-

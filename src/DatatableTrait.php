@@ -70,7 +70,7 @@ trait DatatableTrait
                     'updatable' => $this->getUpdatableColumns(),
                     'creatable' => $this->getCreatableColumns(),
                     'displayable' => $this->getDisplayableColumns(),
-                    'quick_create' => $this->getQuickCreateColumns()
+                    'quick_create' => $this->getQuickCreateColumns(),
                 ],
                 'records' => $this->getRecords($request),
             ],

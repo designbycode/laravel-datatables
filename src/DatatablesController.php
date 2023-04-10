@@ -56,6 +56,4 @@ abstract class DatatablesController extends Controller
             return redirect()->back()->with('success', 'Successfully deleted');
         }
     }
-
-
 }
