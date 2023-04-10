@@ -70,6 +70,7 @@ trait DatatableTrait
                     'updatable' => $this->getUpdatableColumns(),
                     'creatable' => $this->getCreatableColumns(),
                     'displayable' => $this->getDisplayableColumns(),
+                    'quick_create' => $this->getQuickCreateColumns()
                 ],
                 'records' => $this->getRecords($request),
             ],
@@ -131,6 +132,14 @@ trait DatatableTrait
     protected function getUpdatableColumns(): array
     {
         return $this->getDisplayableColumns();
+    }
+
+    /**
+     * Quick create columns
+     */
+    protected function getQuickCreateColumns(): array
+    {
+        return $this->getCreatableColumns();
     }
 
     /**

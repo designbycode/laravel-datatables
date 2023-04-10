@@ -18,8 +18,6 @@ class DatatablesServiceProvider extends PackageServiceProvider
         $package
             ->name('datatables')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_datatables_table')
-            ->hasCommand(DatatablesCommand::class);
+            ->hasViews();
     }
 }
