@@ -23,11 +23,6 @@ You can publish the config file with:
 php artisan vendor:publish --tag="laravel-datatables-config"
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-datatables-views"
-```
 
 ## Usage
 
