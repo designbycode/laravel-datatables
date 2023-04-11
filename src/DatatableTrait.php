@@ -3,6 +3,7 @@
 namespace Designbycode\Datatables;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Arr;
@@ -165,6 +166,36 @@ trait DatatableTrait
             ->through(function ($model) {
                 return Arr::only($model->toArray(), $this->getDisplayableColumns());
             });
+    }
+
+    protected function itemStore(Request $request): Model|Builder
+    {
+        return $this->builder->create($request->only($this->getCreatableColumns()));
+    }
+
+    protected function itemUpdate(Request $request, int $id): bool|int
+    {
+        return $this->builder->findOrFail($id)->update($request->only($this->getUpdatableColumns()));
+    }
+
+    /**
+     * @return bool|mixed|void|null
+     */
+    protected function itemDelete(int $id)
+    {
+        if ($this->allowDeletion) {
+            return $this->builder->find($id)->delete();
+        }
+    }
+
+    /**
+     * @return mixed|void
+     */
+    protected function itemsDelete(string $ids)
+    {
+        if ($this->allowDeletion) {
+            return $this->builder->whereIn('id', explode(',', $ids))->delete();
+        }
     }
 
     /**

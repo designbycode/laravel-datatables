@@ -15,6 +15,6 @@ class PostController extends DatatablesController
 
     public function index(Request $request): array
     {
-        return parent::index($request);
+        return $this->getResponse($request);
     }
 }
