@@ -168,14 +168,14 @@ trait DatatableTrait
             });
     }
 
-    protected function itemStore(Request $request): Model|Builder
+    protected function itemStore(array $array): Builder|Model
     {
-        return $this->builder->create($request->only($this->getCreatableColumns()));
+        return $this->builder->create(request()->only($array));
     }
 
-    protected function itemUpdate(Request $request, int $id): bool|int
+    protected function itemUpdate(int $id, array $array): bool|int
     {
-        return $this->builder->findOrFail($id)->update($request->only($this->getUpdatableColumns()));
+        return $this->builder->findOrFail($id)->update(request()->only($array));
     }
 
     /**
