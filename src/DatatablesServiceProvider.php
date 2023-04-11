@@ -7,8 +7,11 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class DatatablesServiceProvider extends PackageServiceProvider
 {
+    public string $name = 'datatables';
+
     public function configurePackage(Package $package): void
     {
+
         /*
          * This class is a Package Service Provider
          *

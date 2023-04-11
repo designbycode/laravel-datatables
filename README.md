@@ -8,7 +8,6 @@
 This package is the backend implementation for creating datatables for Laravel modal.
 
 
-
 ## Installation
 
 You can install the package via composer:
@@ -20,7 +19,7 @@ composer require designbycode/laravel-datatables
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-datatables-config"
+php artisan vendor:publish --tag="datatables-config"
 ```
 
 

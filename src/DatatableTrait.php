@@ -20,7 +20,7 @@ trait DatatableTrait
 
     protected bool $allowSearching = true;
 
-    protected int $default_limit = 25;
+    protected int $defaultLimit = 25;
 
     protected string $sortDirection = 'desc';
 
@@ -92,7 +92,7 @@ trait DatatableTrait
      */
     private function getLimit(Request $request): int
     {
-        return $request->limit ?? $this->default_limit;
+        return $request->limit ?? $this->defaultLimit;
     }
 
     /**

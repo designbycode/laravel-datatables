@@ -11,6 +11,8 @@ abstract class DatatablesController extends Controller
 
     public function index(Request $request)
     {
+        config('datatable.limit', 25);
+
         return $this->getResponse($request);
     }
 
