@@ -22,6 +22,8 @@ trait DatatableTrait
 
     protected int $default_limit = 25;
 
+    protected string $sortDirection = 'desc';
+
     public Builder $builder;
 
     /**
@@ -169,7 +171,7 @@ trait DatatableTrait
             $builder = $this->buildSearch($builder, $request);
         }
 
-        return $this->builder->orderBy('id', 'asc')->paginate($this->getLimit($request))
+        return $this->builder->orderBy('id', $this->sortDirection)->paginate($this->getLimit($request))
             ->through(function ($model) {
                 return Arr::only($model->toArray(), $this->getDisplayableColumns());
             });
