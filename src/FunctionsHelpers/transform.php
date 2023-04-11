@@ -1,6 +1,6 @@
 <?php
 
-function singleArrayToMultiArray($array, $value = ''): array
+function singleArrayToMultiArray(array $array, string $value = ''): array
 {
     $newArray = [];
     foreach ($array as $key) {

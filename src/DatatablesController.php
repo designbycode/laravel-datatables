@@ -2,6 +2,7 @@
 
 namespace Designbycode\Datatables;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -29,7 +30,7 @@ abstract class DatatablesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): void
+    public function store(Request $request)
     {
         $this->builder->create($request->only($this->getCreatableColumns()));
     }
@@ -49,6 +50,8 @@ abstract class DatatablesController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @return RedirectResponse|void
      */
     public function destroy(string $ids)
     {

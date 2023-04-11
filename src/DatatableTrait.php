@@ -2,7 +2,6 @@
 
 namespace Designbycode\Datatables;
 
-use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -26,18 +25,9 @@ trait DatatableTrait
 
     public Builder $builder;
 
-    /**
-     * @throws Exception
-     */
     public function __construct()
     {
-        $builder = $this->builder();
-
-        if (! $builder instanceof Builder) {
-            throw new Exception('Not an instance of Builder');
-        }
-
-        $this->builder = $builder;
+        $this->builder = $this->builder();
     }
 
     /**
@@ -196,10 +186,7 @@ trait DatatableTrait
         return $builder->where($request->column, $queryParts['operator'], $queryParts['value']);
     }
 
-    /**
-     * Query part for search builder.
-     */
-    private function resolveQueryParts($operator, $value): mixed
+    private function resolveQueryParts(string $operator, string $value): array
     {
         return Arr::get([
             'equals' => [
