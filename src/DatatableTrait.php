@@ -153,6 +153,8 @@ trait DatatableTrait
 
     /**
      * Build query and return collection of data
+     * @param Request $request
+     * @return LengthAwarePaginator
      */
     private function getRecords(Request $request): LengthAwarePaginator
     {
@@ -168,14 +170,23 @@ trait DatatableTrait
             });
     }
 
-    protected function itemStore(array $array): Builder|Model
+    /**
+     * @param array $array
+     * @return void
+     */
+    protected function itemStore(array $array)
     {
-        return $this->builder->create(request()->only($array));
+        $this->builder->create($array);
     }
 
-    protected function itemUpdate(int $id, array $array): bool|int
+    /**
+     * @param int $id
+     * @param array $array
+     * @return void
+     */
+    protected function itemUpdate(int $id, array $array)
     {
-        return $this->builder->findOrFail($id)->update(request()->only($array));
+        $this->builder->findOrFail($id)->update($array);
     }
 
     /**
@@ -188,7 +199,9 @@ trait DatatableTrait
         }
     }
 
+
     /**
+     * @param string $ids
      * @return mixed|void
      */
     protected function itemsDelete(string $ids)
@@ -200,6 +213,8 @@ trait DatatableTrait
 
     /**
      * Check if search query is present
+     * @param Request $request
+     * @return bool
      */
     protected function hasSearchQuery(Request $request): bool
     {
