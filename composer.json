@@ -20,7 +20,7 @@
         "php": "^8.2",
         "doctrine/dbal": "^4.0.1",
         "illuminate/contracts": "^v11.0.6",
-        "spatie/laravel-package-tools": "^1.14.0"
+        "spatie/laravel-package-tools": "^1.16.0"
     },
     "require-dev": {
         "laravel/pint": "^v1.14.0",

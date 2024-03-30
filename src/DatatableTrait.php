@@ -153,8 +153,6 @@ trait DatatableTrait
 
     /**
      * Build query and return collection of data
-     * @param Request $request
-     * @return LengthAwarePaginator
      */
     private function getRecords(Request $request): LengthAwarePaginator
     {
@@ -171,7 +169,6 @@ trait DatatableTrait
     }
 
     /**
-     * @param array $array
      * @return void
      */
     protected function itemStore(array $array)
@@ -180,8 +177,6 @@ trait DatatableTrait
     }
 
     /**
-     * @param int $id
-     * @param array $array
      * @return void
      */
     protected function itemUpdate(int $id, array $array)
@@ -199,9 +194,7 @@ trait DatatableTrait
         }
     }
 
-
     /**
-     * @param string $ids
      * @return mixed|void
      */
     protected function itemsDelete(string $ids)
@@ -213,8 +206,6 @@ trait DatatableTrait
 
     /**
      * Check if search query is present
-     * @param Request $request
-     * @return bool
      */
     protected function hasSearchQuery(Request $request): bool
     {
