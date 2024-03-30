@@ -20,6 +20,6 @@ class DatatablesServiceProvider extends PackageServiceProvider
         $package
             ->name('datatables')
             ->hasConfigFile();
-//            ->hasViews();
+        //            ->hasViews();
     }
 }

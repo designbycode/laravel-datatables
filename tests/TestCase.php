@@ -35,8 +35,8 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
-//                $migration = include __DIR__.'/../database/migrations/create_datatables_table.php.stub';
-//                $migration->up();
+        //                $migration = include __DIR__.'/../database/migrations/create_datatables_table.php.stub';
+        //                $migration->up();
 
         Route::resource('posts', \Designbycode\Datatables\Tests\Stubs\PostController::class);
 

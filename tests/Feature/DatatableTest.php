@@ -1,6 +1,7 @@
 <?php
 
 use Designbycode\Datatables\Tests\Stubs\Post;
+
 //
 //it('can create post model', function () {
 //    $post = Post::create(['title' => 'first', 'content' => 'content']);
