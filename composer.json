@@ -6,7 +6,6 @@
         "laravel",
         "laravel-datatables"
     ],
-    "version": "2.0",
     "homepage": "https://github.com/designbycode/laravel-datatables",
     "license": "MIT",
     "authors": [
